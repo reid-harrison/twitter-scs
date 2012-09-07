@@ -1,0 +1,162 @@
+SAMPLE CLIENT OUTPUT:
+==========================================================================================
+reid@doob:~/projects/CS3251/Proj2$ ./nsttweet -u 127.0.0.1 13000 "test15" "networking" && ./nsttweet -u 127.0.0.1 13000 "test1" "networking" && ./nsttweet -u 127.0.0.1 13000 "test2" "networking" && ./nsttweet -u 127.0.0.1 13000 "test3" "networking" && ./nsttweet -u 127.0.0.1 13000 "test4" "networking" && ./nsttweet -u 127.0.0.1 13000 "test5" "networking" && ./nsttweet -u 127.0.0.1 13000 "test6" "networking" && ./nsttweet -u 127.0.0.1 13000 "test7" "networking" && ./nsttweet -u 127.0.0.1 13000 "test8" "networking"
+Uploading tweet...
+Tweet uploaded!
+Uploading tweet...
+Tweet uploaded!
+Uploading tweet...
+Tweet uploaded!
+Uploading tweet...
+Tweet uploaded!
+Uploading tweet...
+Tweet uploaded!
+Uploading tweet...
+Tweet uploaded!
+Uploading tweet...
+Tweet uploaded!
+Uploading tweet...
+Tweet uploaded!
+Uploading tweet...
+Tweet uploaded!
+reid@doob:~/projects/CS3251/Proj2$ ./nsttweet -d -nosub 127.0.0.1 13000  "networking"
+Download tweets...
+=============================================================
+1. test15
+2. test1
+3. test2
+4. test3
+5. test4
+6. test5
+7. test6
+8. test7
+9. test8
+reid@doob:~/projects/CS3251/Proj2$ ./nsttweet -d -sub 127.0.0.1 13000  "networking"
+Download tweets...
+=============================================================
+1. test15
+2. test1
+3. test2
+4. test3
+5. test4
+6. test5
+7. test6
+8. test7
+9. test8
+=============================================================
+1. test15
+2. test1
+3. test2
+4. test3
+5. test4
+6. test5
+7. test6
+8. test7
+9. test8
+10. testhkfdjklfdsjkl;fds
+
+
+MATCHING SERVER OUTPUT:
+==========================================================================================
+reid@doob:~/projects/CS3251/Proj2$ ./nsttweetServer 13000
+Server started.
+Handling client 127.0.0.1/50625
+upload
+NETWORKING ADD
+Handling client 127.0.0.1/50626
+upload
+NETWORKING ADD
+Handling client 127.0.0.1/50627
+upload
+NETWORKING ADD
+Handling client 127.0.0.1/50628
+upload
+NETWORKING ADD
+Handling client 127.0.0.1/50629
+upload
+NETWORKING ADD
+Handling client 127.0.0.1/50630
+upload
+NETWORKING ADD
+Handling client 127.0.0.1/50631
+upload
+NETWORKING ADD
+Handling client 127.0.0.1/50632
+upload
+NETWORKING ADD
+Handling client 127.0.0.1/50633
+upload
+NETWORKING ADD
+Handling client 127.0.0.1/50634
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50636
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50637
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50638
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50639
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50640
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50641
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50642
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50643
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50644
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50645
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50646
+upload
+NETWORKING ADD
+Handling client 127.0.0.1/50647
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50648
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50649
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50650
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50651
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50652
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50653
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50654
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50655
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50656
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50657
+download
+Tweets sent to client.
+Handling client 127.0.0.1/50658
+download
+
+
