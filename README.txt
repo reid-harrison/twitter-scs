@@ -1,6 +1,7 @@
 README.TXT
 Reid Harrison
 CS 3251 (Networking 1) Project 2
+Simple C twitter-like service
 
 ================================================
 TO COMPILE
