@@ -1,6 +1,6 @@
 /*///////////////////////////////////////////////////////////
 *
-* FILE:		    ttweet.c
+* FILE:		    tweet.c
 * AUTHOR:	    Reid Harrison
 * PROJECT:	    CS 3251 (Networking 1) Project 2
 * DESCRIPTION:  TTweet Client
@@ -135,17 +135,8 @@ int main(int argc, char *argv[]) {
         }
         
         puts("Uploading tweet...");
-        
-        strcpy(sndbuf, "upload<?>");
-        i += strlen("upload<?>");
-        strcpy(sndbuf + i, subject);
-        i += strlen(subject);
-        strcpy(sndbuf + i, "<?>");
-        i += strlen("<?>");
-        strcpy(sndbuf + i, tweet);
-        i += strlen(tweet);
-        strcpy(sndbuf + i, "<?>");
-        
+        sprintf(sndbuf, "upload<?>%s<?>%s<?>", subject, tweet);
+
         /* Send the tweet to the server */
         ssize_t numBytes = send(clientSock, sndbuf, SNDBUFSIZE, 0);
         if (numBytes < 0) {
@@ -154,12 +145,14 @@ int main(int argc, char *argv[]) {
         } else {
             puts("Tweet uploaded!");
         }
+
         close(clientSock);
     } else {
         puts("Download tweets...");
         
         while(downloaded == 0 || sub == 1) {
             i = 0;
+
             /* Create a new TCP socket*/
             clientSock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
             if (clientSock < 0) {
@@ -186,12 +179,7 @@ int main(int argc, char *argv[]) {
                 exit(1);
             }
             
-            strcpy(sndbuf, "download<?>");
-            i += strlen("download<?>");
-
-            strcpy(sndbuf + i, subject);
-            i += strlen(subject);
-            strcpy(sndbuf + i, "<?>");
+            sprintf(sndbuf, "download<?>%s<?>", subject);
             
             ssize_t numBytes = send(clientSock, sndbuf, SNDBUFSIZE, 0);
             if (numBytes < 0) {
@@ -217,6 +205,7 @@ int main(int argc, char *argv[]) {
                     puts("There are no tweets for this subject.");
                     noTweetMsg = 0;
                 }
+
                 usleep(1000000);
                 continue;
             }
@@ -234,15 +223,10 @@ int main(int argc, char *argv[]) {
             
             downloaded = 1;
             
-            if (cmpLists(baseList, newList) != 0) {
+            if (listsEqual(baseList, newList) == 0) {
                 baseList = copyList(newList);
-                differentLists = 1;
-            }
-            
-            if (differentLists == 1) {
                 puts("=============================================================");
                 printTweets(baseList);
-                differentLists = 0;
             }
             
             close(clientSock);

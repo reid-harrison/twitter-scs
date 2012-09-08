@@ -17,7 +17,7 @@ list *makeList() {
     return newList;
 }
 
-node *makeNode(char* tweet) {
+node *makeNode(char *tweet) {
 	node *newNode = malloc(sizeof(node));
 	char *tempTweet = (char *) malloc(strlen(tweet));
 	strcpy(tempTweet, tweet);
@@ -27,7 +27,7 @@ node *makeNode(char* tweet) {
 		exit(1);
 	}
 
-	newNode->tweet = tempTweet ;
+	newNode->tweet = tempTweet;
 	newNode->next = NULL;
 	newNode->prev = NULL;
 	
@@ -35,7 +35,6 @@ node *makeNode(char* tweet) {
 }
 
 void addTweet(list *list, node *node) {
-    
     struct node *temp;
 
 	if (list == NULL || node == NULL) {
@@ -83,8 +82,8 @@ void printTweets(list *list) {
 	curr = list->head;
 	
 	do {
-	    printf("%d", i);
-	    printf("%s", ". ");
+	    printf("%d%s", i, ". ");
+	    //printf("%s", ". ");
 		printTweet(curr);
 		curr = curr->next;
 		i++;
@@ -93,9 +92,8 @@ void printTweets(list *list) {
 
 
 void printTweet(node *node) {
-  	
   	if (node == NULL) {
-		printf("print_node error: NULL node parameter\n");
+		printf("NULL tweet\n");
 		return;
 	}
 	
@@ -117,6 +115,7 @@ char *listToStr(list *list) {
 	
 	do {
 	    tweet = (char *) malloc(strlen(curr->tweet));
+
 	    if (allTweets == NULL) {
 	        allTweets = (char *) malloc(strlen(tweet) + 3);
 	    }
@@ -175,7 +174,7 @@ void freeList(list *list) {
 	list->head = NULL;
 }
 
-int cmpLists(list *list1, list *list2) {
+int listsEqual(list *list1, list *list2) {
     node *curr1;
     node *curr2;
 
@@ -184,7 +183,7 @@ int cmpLists(list *list1, list *list2) {
     }
 
     if (list1->size != list2->size) {
-        return -1;
+        return 0;
     }
     
     curr1 = list1->head;
@@ -192,12 +191,12 @@ int cmpLists(list *list1, list *list2) {
     
     do {
 	    if (strcmp(curr1->tweet, curr2->tweet) != 0) {
-	        return -1;
+	        return 0;
 	    }
 	    
 	    curr1 = curr1->next;
 	    curr2 = curr2->next;
 	} while(curr1 != list1->head);
 	
-	return 0;
+	return 1;
 }

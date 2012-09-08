@@ -1,162 +1,477 @@
 SAMPLE CLIENT OUTPUT:
 ==========================================================================================
-reid@doob:~/projects/CS3251/Proj2$ ./nsttweet -u 127.0.0.1 13000 "test15" "networking" && ./nsttweet -u 127.0.0.1 13000 "test1" "networking" && ./nsttweet -u 127.0.0.1 13000 "test2" "networking" && ./nsttweet -u 127.0.0.1 13000 "test3" "networking" && ./nsttweet -u 127.0.0.1 13000 "test4" "networking" && ./nsttweet -u 127.0.0.1 13000 "test5" "networking" && ./nsttweet -u 127.0.0.1 13000 "test6" "networking" && ./nsttweet -u 127.0.0.1 13000 "test7" "networking" && ./nsttweet -u 127.0.0.1 13000 "test8" "networking"
-Uploading tweet...
-Tweet uploaded!
-Uploading tweet...
-Tweet uploaded!
-Uploading tweet...
-Tweet uploaded!
-Uploading tweet...
-Tweet uploaded!
-Uploading tweet...
-Tweet uploaded!
-Uploading tweet...
-Tweet uploaded!
-Uploading tweet...
-Tweet uploaded!
-Uploading tweet...
-Tweet uploaded!
-Uploading tweet...
-Tweet uploaded!
-reid@doob:~/projects/CS3251/Proj2$ ./nsttweet -d -nosub 127.0.0.1 13000  "networking"
+reid@doob:~/projects/Networking1/twitter-scs$ ./client -d -nosub 127.0.0.1 13000  "networking"
 Download tweets...
 =============================================================
-1. test15
-2. test1
-3. test2
-4. test3
-5. test4
-6. test5
-7. test6
-8. test7
-9. test8
-reid@doob:~/projects/CS3251/Proj2$ ./nsttweet -d -sub 127.0.0.1 13000  "networking"
+1. test1
+2. test2
+3. test3
+4. test4
+5. test5
+6. test6
+7. test7
+8. test8
+9. test9
+10. !
+reid@doob:~/projects/Networking1/twitter-scs$ ./client -d -nosub 127.0.0.1 13000  "networking"
 Download tweets...
 =============================================================
-1. test15
-2. test1
-3. test2
-4. test3
-5. test4
-6. test5
-7. test6
-8. test7
-9. test8
+1. test1
+2. test2
+3. test3
+4. test4
+5. test5
+6. test6
+7. test7
+8. test8
+9. test9
+10. !
+reid@doob:~/projects/Networking1/twitter-scs$ ./client -d -sub 127.0.0.1 13000  "networking"
+Download tweets...
 =============================================================
-1. test15
-2. test1
-3. test2
-4. test3
-5. test4
-6. test5
-7. test6
-8. test7
-9. test8
-10. testhkfdjklfdsjkl;fds
+1. test1
+2. test2
+3. test3
+4. test4
+5. test5
+6. test6
+7. test7
+8. test8
+9. test9
+10. !
+=============================================================
+1. test1
+2. test2
+3. test3
+4. test4
+5. test5
+6. test6
+7. test7
+8. test8
+9. test9
+10. test10
+
 
 
 MATCHING SERVER OUTPUT:
 ==========================================================================================
-reid@doob:~/projects/CS3251/Proj2$ ./nsttweetServer 13000
-Server started.
-Handling client 127.0.0.1/50625
+./server 13000
+Server starting...
+
+Handling client 127.0.0.1/57595
 upload
-NETWORKING ADD
-Handling client 127.0.0.1/50626
+(networking) test1
+
+Handling client 127.0.0.1/57596
 upload
-NETWORKING ADD
-Handling client 127.0.0.1/50627
+(networking) test2
+
+Handling client 127.0.0.1/57597
 upload
-NETWORKING ADD
-Handling client 127.0.0.1/50628
+(networking) test3
+
+Handling client 127.0.0.1/57598
 upload
-NETWORKING ADD
-Handling client 127.0.0.1/50629
+(networking) test4
+
+Handling client 127.0.0.1/57599
 upload
-NETWORKING ADD
-Handling client 127.0.0.1/50630
+(networking) test5
+
+Handling client 127.0.0.1/57600
 upload
-NETWORKING ADD
-Handling client 127.0.0.1/50631
+(networking) test6
+
+Handling client 127.0.0.1/57601
 upload
-NETWORKING ADD
-Handling client 127.0.0.1/50632
+(networking) test7
+
+Handling client 127.0.0.1/57602
 upload
-NETWORKING ADD
-Handling client 127.0.0.1/50633
+(networking) test8
+
+Handling client 127.0.0.1/57603
 upload
-NETWORKING ADD
-Handling client 127.0.0.1/50634
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50636
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50637
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50638
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50639
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50640
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50641
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50642
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50643
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50644
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50645
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50646
+(networking) test9
+^C
+reid@doob:~/projects/Networking1/twitter-scs$ ./server 13000
+Server starting...
+
+Handling client 127.0.0.1/57815
 upload
-NETWORKING ADD
-Handling client 127.0.0.1/50647
+(networking) test1
+
+Handling client 127.0.0.1/57816
+upload
+(networking) test2
+
+Handling client 127.0.0.1/57817
+upload
+(networking) test3
+
+Handling client 127.0.0.1/57818
+upload
+(networking) test4
+
+Handling client 127.0.0.1/57819
+upload
+(networking) test5
+
+Handling client 127.0.0.1/57820
+upload
+(networking) test6
+
+Handling client 127.0.0.1/57821
+upload
+(networking) test7
+
+Handling client 127.0.0.1/57822
+upload
+(networking) test8
+
+Handling client 127.0.0.1/57823
+upload
+(networking) test9
+
+Handling client 127.0.0.1/57824
 download
 Tweets sent to client.
-Handling client 127.0.0.1/50648
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50649
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50650
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50651
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50652
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50653
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50654
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50655
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50656
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50657
-download
-Tweets sent to client.
-Handling client 127.0.0.1/50658
-download
 
 
+Handling client 127.0.0.1/57825
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57931
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57932
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57933
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57934
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57935
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57936
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57937
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57938
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57939
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57940
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57941
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57942
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57943
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57944
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57945
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57946
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57947
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57948
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57949
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57950
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57951
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57952
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57953
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57954
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57955
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57956
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57957
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57958
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57959
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57960
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57961
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57962
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57963
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57964
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57965
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57966
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57967
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57968
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57969
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57970
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57971
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57972
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57973
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57974
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57975
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57976
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57977
+upload
+(networking) test10
+
+Handling client 127.0.0.1/57978
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57979
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57980
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57981
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57982
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57983
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57984
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/57985
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/58010
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/58021
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/58024
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/58025
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/58026
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/58027
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/58028
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/58029
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/58030
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/58031
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/58032
+download
+Tweets sent to client.
+
+
+Handling client 127.0.0.1/58033
+download
+Tweets sent to client.

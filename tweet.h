@@ -42,7 +42,7 @@ list *copyList(list *list);
 /** Frees the memory allocated to the given list **/
 void freeList(list *list);
 
-/** Compares two lists. Returns -1 if they are different, 0 if they are the same **/
-int cmpLists(list *list1, list *list2);
+/** Compares two lists. Returns 0 if they are different, 1 if they are the same **/
+int listsEqual(list *list1, list *list2);
 
 #endif

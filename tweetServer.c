@@ -1,6 +1,6 @@
 /*///////////////////////////////////////////////////////////
 *
-* FILE:		    ttweetServer.c
+* FILE:		    tweetServer.c
 * AUTHOR:	    Reid Harrison
 * PROJECT:	    CS 3251 Project 1
 * DESCRIPTION:	TTweet Server
@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
     char *subject;
     char *newTweet;
     
-    puts("Server started.");
+    puts("Server starting...");
     
     servPort = atoi(argv[1]);
     
@@ -84,7 +84,7 @@ int main(int argc, char *argv[]) {
 
         char clntName[INET_ADDRSTRLEN];
         if (inet_ntop(AF_INET, &clntAddr.sin_addr.s_addr, clntName, sizeof(clntName)) != NULL) {
-	        printf("Handling client %s/%d\n", clntName, ntohs(clntAddr.sin_port));
+	        printf("\nHandling client %s/%d\n", clntName, ntohs(clntAddr.sin_port));
 	    } else {
 	        puts("Unable to get client address\n");
 	    }
@@ -107,8 +107,9 @@ int main(int argc, char *argv[]) {
 	            newTweet = strtok(NULL, "<?>");
 	        }
 	    } else {
-	        puts("ERROR: TweetBuf is NULL");
+	        puts("ERROR: tweetBuf is NULL");
 	    }
+
 	    memset(&responseBuf, 0, SNDBUFSIZE);
 	    
 	    if (command != NULL) {
@@ -129,25 +130,24 @@ int main(int argc, char *argv[]) {
 	            }
 	            
 	            if (send(clientSock, responseBuf, strlen(responseBuf), 0) != strlen(responseBuf)) {
-	                puts("Download did not complete");
+	                puts("Download did not complete\n");
 		        } else {
-		            puts("Tweets sent to client.");
+		            puts("Tweets sent to client.\n");
 		        }
 	        } else {
 	            /**************
 	            * UPLOAD    
 	            **************/
 	            if (strcmp(command, "upload") == 0) {
+	                printf("(%s) %s\n", subject, newTweet);
+
 	                if (strcmp(subject, "eat") == 0) {
-	                    puts("EAT ADD");
 	                    addTweet(eatList, makeNode(newTweet));
 	                } else {
 	                    if (strcmp(subject, "sleep") == 0) {
-	                        puts("SLEEP ADD");
 	                        addTweet(sleepList, makeNode(newTweet));
 	                    } else {
 	                        if (strcmp(subject, "networking") == 0) {
-	                            puts("NETWORKING ADD");
 	                            addTweet(networkingList, makeNode(newTweet));
 	                        }
 	                    }

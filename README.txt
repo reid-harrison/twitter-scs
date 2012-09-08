@@ -46,7 +46,8 @@ When a client chooses to subscribe, the client will continually poll the server 
 ================================================
 KNOWN BUGS OR LIMITATIONS
 ================================================
--Client continually polls the server, this is inefficient. Long-poll would be preferred.
+-Client continually polls the server, this is inefficient. It would be better if the client sent a hash of the list they last received. A long-poll would be preferred if the hash matches.
+-Server is blocking and new client connections must be made for each request.
 -Errors cause exits
 -No checks on tweet size.
 -Only check on tweet content ensures that it does not contain the two reserved delimiters.
