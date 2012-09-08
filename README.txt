@@ -26,7 +26,7 @@ Next, run the client with the necessary options.
   To download with subscription:
     ./client -d -sub 127.0.0.1 13000 "SUBJECT"
     
-  "SUBJECT" must be either eat, sleep, or networking.
+  SUBJECT must be either eat, sleep, or networking.
 
 ================================================
 THE PROTOCOL
