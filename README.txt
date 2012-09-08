@@ -12,19 +12,19 @@ Simply type "make"
 TO RUN
 ================================================
 First, run the server:
-    ./nsttweetServer <PORT NUM>
+    ./server <PORT NUM>
     
 The server will run on 127.0.0.1:<PORT NUM>
 
 Next, run the client with the necessary options.
   To upload:
-    ./nsttweet -u 127.0.0.1 13000 "YOUR TWEET HERE" "SUBJECT"
+    ./client -u 127.0.0.1 13000 "YOUR TWEET HERE" "SUBJECT"
     
   To download with no subscription:
-    ./nsttweet -d -nosub 127.0.0.1 13000 "SUBJECT"
+    ./client -d -nosub 127.0.0.1 13000 "SUBJECT"
     
   To download with subscription:
-    ./nsttweet -d -sub 127.0.0.1 13000 "SUBJECT"
+    ./client -d -sub 127.0.0.1 13000 "SUBJECT"
     
   "SUBJECT" must be either eat, sleep, or networking.
 
