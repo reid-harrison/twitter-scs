@@ -77,17 +77,17 @@ int main(int argc, char *argv[]) {
     while(1) {   
         clntLen = sizeof(clntAddr);
         
-	    /* Accept incoming connection */
-	    if ((clientSock = accept(serverSock, (struct sockaddr*) &clntAddr, &clntLen)) < 0) {
-		    exit(1);
-		}
+	/* Accept incoming connection */
+	if ((clientSock = accept(serverSock, (struct sockaddr*) &clntAddr, &clntLen)) < 0) {
+		exit(1);
+	}
 
         char clntName[INET_ADDRSTRLEN];
         if (inet_ntop(AF_INET, &clntAddr.sin_addr.s_addr, clntName, sizeof(clntName)) != NULL) {
-	        printf("\nHandling client %s/%d\n", clntName, ntohs(clntAddr.sin_port));
-	    } else {
-	        puts("Unable to get client address\n");
-	    }
+	    printf("\nHandling client %s/%d\n", clntName, ntohs(clntAddr.sin_port));
+	} else {
+	    puts("Unable to get client address\n");
+	}
 	        
 	    int msgSize = 0;
 	    /* Extract the tweet and put it in tweetBuf */
