@@ -13,34 +13,34 @@ TO RUN
 ================================================
 First, run the server:
     ./server <PORT NUM>
-    
+
 The server will run on 127.0.0.1:<PORT NUM>
 
 Next, run the client with the necessary options.
   To upload:
     ./client -u 127.0.0.1 13000 "YOUR TWEET HERE" "SUBJECT"
-    
+
   To download with no subscription:
     ./client -d -nosub 127.0.0.1 13000 "SUBJECT"
-    
+
   To download with subscription:
     ./client -d -sub 127.0.0.1 13000 "SUBJECT"
-    
+
   SUBJECT must be either eat, sleep, or networking.
 
 ================================================
 THE PROTOCOL
 ================================================
 The protocol for this application is incredibly simple. The client sends messages in the following format:
-    
+
     For upload:
         "upload<?>SUBJECT<?>TWEET<?>"
-        
+
     For download:
         "download<?>SUBJECT<?>"
-        
+
     The server parses the command from the client and then runs accordingly. For downloads, the server simply sends the tweets for the given subject back, each one separated by their <?> token.
-    
+
 When a client chooses to subscribe, the client will continually poll the server in the background. If the server responds with tweets that the client doesn't already have then the new list will be printed.
 
 ================================================

@@ -7,9 +7,9 @@
 
 typedef struct node
 {
-	char *tweet;
-	struct node *next;
-	struct node *prev;
+    char *tweet;
+    struct node *next;
+    struct node *prev;
 } node;
 
 typedef struct list

@@ -93,9 +93,9 @@ int main(int argc, char *argv[]) {
             puts("Invalid tweet.\n");
             exit(1);
         }
-        
+
     }
-	
+
     if (subject == NULL || !(strcmp(subject, "eat") == 0 || strcmp(subject, "sleep") == 0 || strcmp(subject, "networking") == 0)) {
         puts("Invalid Subject!\n");
         puts("Valid subjects: eat, sleep, networking\n");
