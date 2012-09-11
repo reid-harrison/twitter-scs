@@ -49,8 +49,7 @@ int main(int argc, char *argv[]) {
     list *newList;
     
     /* Get the arguments from the command line */
-    if (argc != 6) 
-    {
+    if (argc != 6) {
 	    printf("Incorrect input format.\n");
 	    exit(1);
     }
@@ -95,7 +94,7 @@ int main(int argc, char *argv[]) {
             exit(1);
         }
         
-	}
+    }
 	
     if (subject == NULL || !(strcmp(subject, "eat") == 0 || strcmp(subject, "sleep") == 0 || strcmp(subject, "networking") == 0)) {
         puts("Invalid Subject!\n");
